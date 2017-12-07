@@ -40,3 +40,11 @@ void preOrder(Tree *root) {
 	preOrder(root->left);
 	preOrder(root->right);
 }
+
+void inOrder(Tree *root) {
+	if(!root) return;
+	
+	inOrder(root->left);
+	printf("%d ", root->data);
+	inOrder(root->right);
+}
