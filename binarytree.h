@@ -12,7 +12,7 @@ bool pushTo(Tree **root, int data);
 
 bool removeFrom(Tree **root, int data);
 
-bool search(Tree **root, int data);
+bool search(Tree *root, int data);
 
 void preOrder(Tree *root);
 
