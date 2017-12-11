@@ -33,6 +33,20 @@ bool pushTo(Tree **root, int data) {
 	return false;
 }
 
+bool search(Tree *root, int data) {
+	if(!root) return false;
+	Tree * temp = root;
+	while(temp != NULL) {
+		if(temp->data == data)
+			return true;
+		else if(temp->data > data)
+			temp = temp->left;
+		else
+			temp = temp->right;
+	}
+	return false;
+}
+
 void preOrder(Tree *root) {
 	if(!root) return;
 
@@ -47,4 +61,12 @@ void inOrder(Tree *root) {
 	inOrder(root->left);
 	printf("%d ", root->data);
 	inOrder(root->right);
+}
+
+void postOrder(Tree *root) {
+	if(!root) return;
+	
+	postOrder(root->left);
+	postOrder(root->right);
+	printf("%d ", root->data);
 }
