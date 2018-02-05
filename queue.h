@@ -4,16 +4,16 @@
 
 #ifndef _QUEUE_H_
 #define _QUEUE_H
-#include <stdlib.h>
+#include <stdbool.h>
 
 typedef struct queue {
 	int data;
-	struct stack *next;
+	struct queue *next;
 } Queue;
 
-bool append(Queue **queue, int data);
+bool enqueue(Queue **queue, int data);
 
-int pop(Queue **queue);
+int dequeue(Queue **queue);
 
 int peek(Queue *queue);
 
